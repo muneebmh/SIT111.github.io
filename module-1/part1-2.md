@@ -4,6 +4,8 @@
 # Types of Sensors and Their Applications
 
 In this section, we delve into the fascinating world of sensors—those incredible devices that allow computers and machines to sense and understand the world around them.
+![Figure 1 21](https://github.com/muneebmh/SIT111.github.io/assets/149995551/82b2545c-474d-4eb7-8b21-f6565fe0c93b)
+*Figure 1.21 Sensors vs Actuators (Source: Dall-E)*
 
 ## What Are Sensors?
 
