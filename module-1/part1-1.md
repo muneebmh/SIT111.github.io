@@ -1,4 +1,4 @@
-# -----------  Module 1: Basics of Hardware Components -----------
+# Basics of Hardware Components 
 
 Welcome to Hardware Modules of our "Computer Systems" course! In these modules, we'll dive deep into the exciting world of computer hardware and microprocessors. Ever wondered what's inside your computer and how it makes everything work? Well, that's exactly what we're going to explore. 
 
