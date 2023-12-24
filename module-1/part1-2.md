@@ -7,6 +7,10 @@ In this section, we delve into the fascinating world of sensors—those incredib
 ![Figure 1 21](https://github.com/muneebmh/SIT111.github.io/assets/149995551/82b2545c-474d-4eb7-8b21-f6565fe0c93b)
 *Figure 1.21 Sensors vs Actuators (Source: Dall-E)*
 
+![Figure 1 22](https://github.com/muneebmh/SIT111.github.io/assets/149995551/a47488d3-00ee-4c48-8613-ab085a1c5b9a)
+
+*Figure 1.22 Types of Sensors (Source: https://www.electronicshub.org/different-types-sensors)*
+
 ## What Are Sensors?
 
 At their core, sensors are like the senses of a computer or a machine. Just as we use our eyes, ears, and skin to perceive our surroundings, sensors enable devices to gather information from the environment. Sensors detect various physical properties, such as temperature, light, sound, and motion, and convert them into electrical signals that computers can understand.
@@ -39,16 +43,20 @@ Now that we're familiar with sensors, it's time to meet their dynamic counterpar
 Actuators are like the muscles of a computer or a machine. Just as our muscles allow us to move and interact with the world, actuators enable machines to perform actions based on information gathered by sensors. These actions can range from simple tasks like turning on a light to complex movements like robotic arms assembling cars.
 
 ### Common Types of Actuators:
-+ **Electric Motors:** Among the most common, these actuators convert electrical energy into mechanical motion. They're found in fans, appliances, and electric vehicles.
-+ **Solenoids:** These electromagnetic devices create linear motion and are used in locks, valves, and even pinball machines.
-+ **Pneumatic Actuators:** Powered by compressed air, these actuators are ideal for heavy-duty applications like industrial machinery and robotics.
++ **Electric Motors:** Electric motors are one of the most prevalent types of actuators. They efficiently convert electrical energy into mechanical motion, making them versatile for numerous applications. Electric motors can be found in a wide range of devices, including fans, household appliances (e.g., washing machines), and electric vehicles (EVs). In EVs, electric motors power the vehicle's wheels, enabling propulsion with high efficiency and low emissions.
+  
++ **Solenoids:** Solenoids are electromagnetic devices that generate linear motion when an electric current flows through them. They are commonly used in applications where precise and controlled linear movement is required. Solenoids find use in locking mechanisms, such as door locks and car door latches, as well as in valves to control the flow of liquids and gases. Additionally, they are found in pinball machines to activate flippers and bumpers, adding an element of excitement to the game.
+  
++ **Pneumatic Actuators:** Powered by compressed air, pneumatic actuators are well-suited for heavy-duty applications, particularly in industrial machinery and robotics. Compressed air is used to create motion in pneumatic cylinders, which can move heavy loads and perform tasks like clamping, lifting, and pushing in manufacturing processes. These actuators are valued for their strength, speed, and reliability, making them essential components in various industrial automation systems.
 
 
 ### Role of Actuators in Hardware Systems
 Actuators bridge the gap between computers and the physical world. Here's why they're crucial:
 
-+ **Response to Sensor Data:** Actuators take the information sensed by sensors and translate it into actions. For example, a temperature sensor might trigger an actuator to turn on a heater when the room gets too cold.
-+ **Automation:** Actuators play a pivotal role in automation, allowing machines to perform tasks without human intervention. This is vital in industries such as manufacturing and agriculture.
-+ **Enhanced Interactivity:** In the world of technology, actuators enable interactive experiences, from the vibrations in your smartphone to the movement of robotic toys.
++ **Response to Sensor Data:** Actuators act as the agents of change in response to the data gathered by sensors. For instance, when a temperature sensor detects that a room has become too cold, an actuator can be triggered to turn on a heater. This immediate and precise response to sensor data is essential in various applications, including climate control in homes and buildings, ensuring comfort and energy efficiency.
+  
++ **Automation:** Actuators are the workhorses of automation, enabling machines and systems to execute tasks without human intervention. This level of automation is particularly vital in industries such as manufacturing and agriculture, where machines equipped with actuators can perform repetitive and labor-intensive tasks with precision and consistency. In manufacturing, robotic arms with actuators can assemble products with speed and accuracy, leading to increased productivity and cost-effectiveness.
+  
++ **Enhanced Interactivity:** In the world of technology, actuators are at the heart of creating interactive experiences. They enable feedback mechanisms that enhance user interaction with devices. For instance, the vibrations in your smartphone, triggered by actuators, provide tactile feedback when you touch the screen or play games. Similarly, in the realm of entertainment, actuators bring robotic toys to life, making them move, dance, or respond to commands. These enhanced interactive experiences are made possible by the precise control that actuators offer, enriching our engagement with technology.
   
 This concludes our exploration of sensors and actuators, two fundamental components that enable computers and machines to interact with their environment. In the next section, we'll venture further into the world of electronics with "Basic Electronics."
