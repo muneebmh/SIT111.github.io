@@ -23,6 +23,8 @@ At their core, sensors are like the senses of a computer or a machine. Just as w
 
 + **Motion Sensors:** These sensors enhance interactive experiences by detecting movement and orientation. They are commonly found in security systems, gaming consoles, and smartphones for applications like screen orientation changes and fitness tracking.
 
+
+
 ![Figure 1 22](https://github.com/muneebmh/SIT111.github.io/assets/149995551/a47488d3-00ee-4c48-8613-ab085a1c5b9a)
 
 *Figure 1.22 Types of Sensors (Source: https://www.electronicshub.org/different-types-sensors)*
