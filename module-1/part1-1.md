@@ -14,17 +14,17 @@ The **Central Processing Unit (CPU)**, often referred to as the "brain" of the c
 
 Modern CPUs are designed based on a microarchitecture that dictates their internal organization and operation. Key aspects of CPU architecture include:
 
-•	Instruction Fetch and Decode: The CPU retrieves and interprets instructions from memory.
-•	Execution Units: These units perform arithmetic and logic operations, handling tasks like addition, subtraction, multiplication, and division.
-•	Registers: High-speed storage locations within the CPU used for temporary data storage and efficient data manipulation.
++ Instruction Fetch and Decode: The CPU retrieves and interprets instructions from memory.
++ Execution Units: These units perform arithmetic and logic operations, handling tasks like addition, subtraction, multiplication, and division.
++ Registers: High-speed storage locations within the CPU used for temporary data storage and efficient data manipulation.
 
 #### CPU Performance Metrics
 
 Understanding CPU performance is crucial for optimizing computer systems. Key performance metrics include:
 
-•	Clock Speed: Measured in Hertz (Hz), clock speed determines how many instructions the CPU can execute per second. Higher clock speeds generally lead to faster processing.
-•	Cores: CPUs may have multiple cores, each capable of executing instructions independently. Multicore processors can handle parallel tasks more efficiently.
-•	Cache Memory: CPU cache stores frequently accessed data and instructions, reducing the need to fetch them from slower main memory.
++ Clock Speed: Measured in Hertz (Hz), clock speed determines how many instructions the CPU can execute per second. Higher clock speeds generally lead to faster processing.
++ Cores: CPUs may have multiple cores, each capable of executing instructions independently. Multicore processors can handle parallel tasks more efficiently.
++ Cache Memory: CPU cache stores frequently accessed data and instructions, reducing the need to fetch them from slower main memory.
 
 
 
@@ -36,8 +36,8 @@ Understanding CPU performance is crucial for optimizing computer systems. Key pe
 
 Different types of RAM exist, including:
 
-•	Dynamic RAM (DRAM): Common in desktops and laptops, DRAM stores data in capacitors and requires periodic refreshing.
-•	Static RAM (SRAM): Found in CPU caches and used for high-speed memory, SRAM doesn't require refreshing and offers faster access times.
++ Dynamic RAM (DRAM): Common in desktops and laptops, DRAM stores data in capacitors and requires periodic refreshing.
++ Static RAM (SRAM): Found in CPU caches and used for high-speed memory, SRAM doesn't require refreshing and offers faster access times.
 
 #### RAM Capacity
 RAM capacity significantly impacts a computer's performance. Operating systems and software demand varying amounts of RAM, so it's essential to choose an appropriate amount for specific tasks.
