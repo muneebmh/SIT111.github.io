@@ -30,7 +30,8 @@ Understanding CPU performance is crucial for optimizing computer systems. Key pe
 + Cache Memory: CPU cache stores frequently accessed data and instructions, reducing the need to fetch them from slower main memory.
 
 ![Figure 1 12](https://github.com/muneebmh/SIT111.github.io/assets/149995551/ffb6d50f-77c3-4145-a17e-5cb56b8be26a)
-*Types of RAM in Computer Systems (Source: https://quicklearncomputer.com/types-of-ram)*
+
+  *Types of RAM in Computer Systems (Source: https://quicklearncomputer.com/types-of-ram)*
 
 ## Memory (RAM)
 
@@ -40,8 +41,17 @@ Understanding CPU performance is crucial for optimizing computer systems. Key pe
 
 Different types of RAM exist, including:
 
-+ Dynamic RAM (DRAM): Common in desktops and laptops, DRAM stores data in capacitors and requires periodic refreshing.
-+ Static RAM (SRAM): Found in CPU caches and used for high-speed memory, SRAM doesn't require refreshing and offers faster access times.
++ **Static RAM (SRAM):** SRAM stores data using a six-transistor memory cell and is primarily used as cache memory for the CPU. It is faster but more expensive and consumes more power than DRAM, and has lower storage capacity for the same physical size​​​​.
+
++ **Dynamic RAM (DRAM):** DRAM stores each bit of data in a separate capacitor within an integrated circuit, making it the standard memory in modern desktop computers. It is less expensive, has a larger storage capacity, and uses less power but requires regular voltage refresh to maintain data​​​​.
+
++ **Synchronous Dynamic RAM (SDRAM):** Developed for higher speeds, SDRAM synchronizes with the system bus, allowing for quicker data access. It was an advancement over asynchronous memory, which operated independently of the processor​​​​.
+
++ **Double Data Rate RAM (DDR):** Introduced in 2000, DDR RAM transfers data on both the rising and falling edges of the clock signal, providing faster speeds and greater energy efficiency than SDRAM. It has undergone several generational improvements, including DDR2, DDR3, DDR4, and the latest DDR5​​​​.
+
++ **Fast Page Mode DRAM (FPM DRAM):** FPM DRAM waits through the entire process of locating and reading a data bit before proceeding to the next. It is an older type of RAM with a maximum transfer rate of around 176 Mbps​​.
+
++ **Extended Data Out RAM (EDO RAM):** EDO RAM improves upon FPM DRAM by beginning to locate the next bit as soon as the address of the first bit is identified, reducing the wait time between reads​
 
 ### RAM Capacity
 RAM capacity significantly impacts a computer's performance. Operating systems and software demand varying amounts of RAM, so it's essential to choose an appropriate amount for specific tasks.
