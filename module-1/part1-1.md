@@ -1,16 +1,16 @@
-# Module 1: Basics of Hardware Components
+# -----------  Module 1: Basics of Hardware Components -----------
 
 Welcome to Hardware Modules of our "Computer Systems" course! In these modules, we'll dive deep into the exciting world of computer hardware and microprocessors. Ever wondered what's inside your computer and how it makes everything work? Well, that's exactly what we're going to explore. 
 
-## Overview of Computer Hardware Components
+# Overview of Computer Hardware Components
 
 In the world of computing, understanding the fundamental hardware components is essential. This section provides an in-depth exploration of the various components that constitute a computer system. By the end of this section, you will have a comprehensive grasp of the intricate interplay between these components and their pivotal roles in computer functionality.
 
-### Central Processing Unit (CPU)
+## Central Processing Unit (CPU)
 
 The **Central Processing Unit (CPU)**, often referred to as the "brain" of the computer, is the nucleus of computing operations. It is responsible for executing instructions, performing calculations, and managing data within the system. The CPU's architecture, performance, and capabilities vary across different computing devices and generations.
 
-#### CPU Architecture
+### CPU Architecture
 
 Modern CPUs are designed based on a microarchitecture that dictates their internal organization and operation. Key aspects of CPU architecture include:
 
@@ -18,7 +18,7 @@ Modern CPUs are designed based on a microarchitecture that dictates their intern
 + Execution Units: These units perform arithmetic and logic operations, handling tasks like addition, subtraction, multiplication, and division.
 + Registers: High-speed storage locations within the CPU used for temporary data storage and efficient data manipulation.
 
-#### CPU Performance Metrics
+### CPU Performance Metrics
 
 Understanding CPU performance is crucial for optimizing computer systems. Key performance metrics include:
 
@@ -28,29 +28,29 @@ Understanding CPU performance is crucial for optimizing computer systems. Key pe
 
 
 
-### Memory (RAM)
+## Memory (RAM)
 
 **Random Access Memory (RAM)** serves as the computer's temporary workspace, providing high-speed data storage for currently running programs and data. RAM offers fast data access but is volatile, meaning its contents are lost when the computer is powered off.
 
-#### RAM Types
+### RAM Types
 
 Different types of RAM exist, including:
 
 + Dynamic RAM (DRAM): Common in desktops and laptops, DRAM stores data in capacitors and requires periodic refreshing.
 + Static RAM (SRAM): Found in CPU caches and used for high-speed memory, SRAM doesn't require refreshing and offers faster access times.
 
-#### RAM Capacity
+### RAM Capacity
 RAM capacity significantly impacts a computer's performance. Operating systems and software demand varying amounts of RAM, so it's essential to choose an appropriate amount for specific tasks.
 
 
-### Storage Devices
+## Storage Devices
 
 **Storage devices** are responsible for permanent data storage. Unlike RAM, storage devices retain data even when the computer is powered off.
 
 
-#### Hard Disk Drives (HDDs)
+### Hard Disk Drives (HDDs)
 Hard Disk Drives (HDDs) are traditional storage devices that use spinning disks to read and write data. They offer ample storage capacity at a lower cost per gigabyte.
-#### Solid-State Drives (SSDs)
+### Solid-State Drives (SSDs)
 Solid-State Drives (SSDs) use flash memory and have no moving parts. They provide faster data access, lower power consumption, and increased durability compared to HDDs.
 
 This comprehensive overview sets the stage for a deeper dive into each component. In subsequent sections, we will explore these hardware elements in greater detail, providing students with a solid foundation in computer hardware fundamentals.
