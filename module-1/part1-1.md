@@ -88,9 +88,10 @@ This comprehensive overview sets the stage for a deeper dive into each component
 
 
 
-
-
-
+```
+Activity:
+Take a moment to inspect your own laptop or computer to identify and list its major hardware components, such as the CPU, RAM, and storage type (HDD/SSD)
+```
 
 
 
