@@ -2,6 +2,9 @@
 
 Welcome to Hardware Modules of our "Computer Systems" course! In these modules, we'll dive deep into the exciting world of computer hardware and microprocessors. Ever wondered what's inside your computer and how it makes everything work? Well, that's exactly what we're going to explore. 
 
+![Figure 1.11 Image depicting the components of a computer system, including the CPU, motherboard, memory modules, storage devices, and various input/output ports](https://github.com/muneebmh/SIT111.github.io/assets/149995551/64a33dad-ce29-44cb-b9a4-870809f1b986)
+
+
 # Overview of Computer Hardware Components
 
 In the world of computing, understanding the fundamental hardware components is essential. This section provides an in-depth exploration of the various components that constitute a computer system. By the end of this section, you will have a comprehensive grasp of the intricate interplay between these components and their pivotal roles in computer functionality.
