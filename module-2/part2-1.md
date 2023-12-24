@@ -14,7 +14,7 @@ Variables are essential components of programming, allowing you to store and man
 + **char (Character):** Used for single characters.
 + **boolean:** Used for representing true or false values.
 
-```
+```arduino
 int age = 25; // Declares an integer variable 'age'
 float temperature = 25.5; // Declares a float variable 'temperature'
 char initial = 'A'; // Declares a character variable 'initial'
@@ -29,7 +29,7 @@ Control structures are the backbone of any program, allowing you to make decisio
 + **else statement:** Provides an alternative action.
 + **loops (e.g., for, while):** Used for repetitive tasks.
 
-```
+```arduino
 int temperature = 28;
 
 if (temperature > 30) {
@@ -50,7 +50,7 @@ Functions are powerful tools for code organization and reusability. They encapsu
 
 ### Creating Custom Functions:
 
-```
+```arduino
 void turnOnLED() {
   digitalWrite(ledPin, HIGH); // Turns on the LED
 }
@@ -59,7 +59,7 @@ void turnOnLED() {
 Here, 'turnOnLED' is a custom function that activates an LED when called. Functions enhance code organization, readability, and the ability to reuse code for different parts of your project.
 Additional Example - Function with Parameters:
 
-```
+```arduino
 int add(int a, int b) {
   return a + b; // Adds two numbers and returns the result
 }
@@ -71,7 +71,7 @@ This example showcases a function 'add' that takes two integers as input and ret
 Libraries are treasure troves of pre-written code that simplify complex tasks. They provide functions and tools for various hardware components. In your Arduino projects, you can include libraries to save time and effort.
 
 Example:
-```
+```arduino
 #include <Servo.h> // Include the Servo library
 
 Servo myservo; // Create a Servo object
@@ -94,7 +94,7 @@ In this example, we include the Servo library to control a servo motor effortles
 Cover:
 In this project, you'll make an LED blink on and off. It's like making a tiny light bulb turn on and off with your code.
 
-```
+```arduino
 int ledPin = 13; // Define the LED pin
 
 void setup() {
@@ -113,7 +113,7 @@ void loop() {
 Cover:
 In this project, you'll make something happen when you press a button. It's like magic – press a button, and something changes!
 
-```
+```arduino
 int buttonPin = 2; // Define the button pin
 int ledPin = 13; // Define the LED pin
 
