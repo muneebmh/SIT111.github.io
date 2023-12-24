@@ -29,7 +29,8 @@ Understanding CPU performance is crucial for optimizing computer systems. Key pe
 + Cores: CPUs may have multiple cores, each capable of executing instructions independently. Multicore processors can handle parallel tasks more efficiently.
 + Cache Memory: CPU cache stores frequently accessed data and instructions, reducing the need to fetch them from slower main memory.
 
-
+![Figure 1 12](https://github.com/muneebmh/SIT111.github.io/assets/149995551/ffb6d50f-77c3-4145-a17e-5cb56b8be26a)
+*Types of RAM in Computer Systems (Source: https://quicklearncomputer.com/types-of-ram)*
 
 ## Memory (RAM)
 
