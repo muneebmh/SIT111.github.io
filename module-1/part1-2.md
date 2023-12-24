@@ -7,9 +7,7 @@ In this section, we delve into the fascinating world of sensors—those incredib
 ![Figure 1 21](https://github.com/muneebmh/SIT111.github.io/assets/149995551/82b2545c-474d-4eb7-8b21-f6565fe0c93b)
 *Figure 1.21 Sensors vs Actuators (Source: Dall-E)*
 
-![Figure 1 22](https://github.com/muneebmh/SIT111.github.io/assets/149995551/a47488d3-00ee-4c48-8613-ab085a1c5b9a)
 
-*Figure 1.22 Types of Sensors (Source: https://www.electronicshub.org/different-types-sensors)*
 
 ## What Are Sensors?
 
@@ -24,6 +22,11 @@ At their core, sensors are like the senses of a computer or a machine. Just as w
 + **Proximity Sensors:** Proximity sensors detect object presence without physical contact, employing technologies like capacitive, inductive, or infrared. They enable touchless gestures in smartphones and are used in automatic faucets to enhance hygiene.
 
 + **Motion Sensors:** These sensors enhance interactive experiences by detecting movement and orientation. They are commonly found in security systems, gaming consoles, and smartphones for applications like screen orientation changes and fitness tracking.
+
+![Figure 1 22](https://github.com/muneebmh/SIT111.github.io/assets/149995551/a47488d3-00ee-4c48-8613-ab085a1c5b9a)
+
+*Figure 1.22 Types of Sensors (Source: https://www.electronicshub.org/different-types-sensors)*
+
 ### Applications of Sensors
 
 Understanding sensors goes beyond knowing what they are. It's equally important to grasp how they impact our lives. Here are some practical applications:
@@ -32,6 +35,7 @@ Understanding sensors goes beyond knowing what they are. It's equally important 
 + **Automotive Systems:** In modern automotive systems, a wide variety of sensors are integrated to enhance safety and driving convenience. Parking assistance sensors help drivers navigate tight spaces, collision avoidance systems use sensors to detect potential dangers and initiate preventive measures, and adaptive cruise control relies on sensors to maintain safe distances from other vehicles. These sensors collectively contribute to safer and more comfortable driving experiences.
   
 + **Healthcare:** The healthcare sector relies heavily on sensors for various applications. Heart rate monitors use sensors to measure and display patients' heart rates, providing crucial information for monitoring cardiac health. Blood glucose sensors are instrumental in managing diabetes, enabling patients to monitor their blood sugar levels and make informed decisions about their treatment. These sensors contribute to diagnostics, continuous monitoring, and treatment optimization, ultimately improving patient care and healthcare outcomes.
+
 
 
 # Understanding Actuators and Their Role in Hardware Systems
