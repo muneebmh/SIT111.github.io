@@ -12,6 +12,6 @@ The module introduced fundamental concepts of electronics, including resistors, 
 ## Introduction to Arduino (1.4): 
 We concluded Module 1 with an exploration of Arduino, a versatile platform for hardware development. You received a brief overview of Arduino boards and their significance in creating hardware projects. Installing the Arduino IDE (Integrated Development Environment) prepared you for programming Arduino. Additionally, you gained a basic understanding of Arduino programming, setting the stage for further exploration.
 
-
+_____________________________________________________________________________
 Module 1 equipped you with essential knowledge of hardware components, sensors, actuators, basic electronics, and Arduino. These foundational concepts are crucial for building a strong understanding of hardware development. As you progress through your studies, you'll have the skills and knowledge to delve into more advanced hardware projects and applications.
 Before we finish Module 1, let's look ahead. In Module 2, we'll learn more about programming Arduino in a language called C/C++. We'll explore how to make decisions, use functions, and take advantage of pre-made code to create cool projects. But that's not all! In Module 3, we'll dive into exciting topics like controlling motors and wireless communication via Arduino.
