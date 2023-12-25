@@ -27,39 +27,38 @@ Some of the key features are:
 + Smart Fan: In the case of a Smart Fan, you can design an IoT (Internet of Things) connected fan using DC motors. By integrating temperature sensors, the fan can monitor the surrounding temperature and adjust its speed accordingly. For instance, when it detects a rise in temperature, it can increase the fan speed to cool the room effectively. This example illustrates the application of DC motors in enhancing the functionality of everyday appliances through Arduino-based control and connectivity.
 
 
-### Example: Basic DC Motor Control with Arduino
-Let's start by demonstrating how to control a basic DC motor using an Arduino. You'll learn how to connect and control the motor's direction and speed.
+### Example: DC Motor Speed Control with Arduino
+Let's start by demonstrating how to control the speed of a DC motor using an Arduino and other components. 
+
+![Figure 3 11](https://github.com/muneebmh/SIT111.github.io/assets/149995551/2bb203d7-6a67-4745-99d3-b989bcb06e7e)
+
+*Figure 3.11 Configuration of DC Motor Speed Control with Arduino (Source: https://circuitdigest.com/microcontroller-projects/dc-motor-speed-control-using-arduino-and-potentiometer)*
+
 
 ```cpp
-#include <Arduino.h>
-
-const int motorPin1 = 9; // Connect one motor terminal to digital pin 9
-const int motorPin2 = 10; // Connect the other motor terminal to digital pin 10
-const int enablePin = 5; // Connect the enable pin of the motor driver to digital pin 5
+int pwmPin = 12;     // Assigns pin 12 to the variable 'pwmPin'
+int pot = A0;        // Assigns analog input A0 to the variable 'pot'
+int c1 = 0;          // Declares variable 'c1'
+int c2 = 0;          // Declares variable 'c2'
 
 void setup() {
-  pinMode(motorPin1, OUTPUT);
-  pinMode(motorPin2, OUTPUT);
-  pinMode(enablePin, OUTPUT);
-  
-  // Initialize the motor with an initial speed
-  analogWrite(enablePin, 200); // Adjust the speed (0 to 255)
+  pinMode(pwmPin, OUTPUT); // Set 'pwmPin' as an OUTPUT
+  pinMode(pot, INPUT);     // Set 'pot' as an INPUT
 }
 
 void loop() {
-  // Make the motor rotate clockwise for 2 seconds
-  digitalWrite(motorPin1, HIGH);
-  digitalWrite(motorPin2, LOW);
-  delay(2000);
+  c2 = analogRead(pot);    // Read the analog value from 'pot' and store it in 'c2'
+  c1 = 1024 - c2;          // Calculate the difference between 1024 and 'c2' and store it in 'c1'
   
-  // Make the motor rotate counterclockwise for 2 seconds
-  digitalWrite(motorPin1, LOW);
-  digitalWrite(motorPin2, HIGH);
-  delay(2000);
+  digitalWrite(pwmPin, HIGH);      // Set 'pwmPin' to HIGH
+  delayMicroseconds(c1);           // Delay for 'c1' microseconds
+  digitalWrite(pwmPin, LOW);       // Set 'pwmPin' to LOW
+  delayMicroseconds(c2);           // Delay for 'c2' microseconds
 }
+
 ```
 
-This example demonstrates how to control the direction and speed of a basic DC motor using Arduino.
+This example demonstrates how to control the speed of a basic DC motor using Arduino.
 
 
 # Servo Motor Control
@@ -83,31 +82,44 @@ Servo Control is a fundamental concept in robotics and automation. Servo motors 
 ### Example: Controlling a Servo Motor with Arduino
 Let's delve into controlling a servo motor with Arduino, enabling you to move it to specific angles accurately.
 
-```cpp
-#include <Servo.h>
+![Figure 3 12](https://github.com/muneebmh/SIT111.github.io/assets/149995551/7d456ea6-0955-4343-b0c5-382e9caa5e28)
 
-Servo myservo; // Create a servo object
+*Figure 3.12 Schematic Diagram to Control Servo via Ardunio (Source: https://www.makerguides.com/servo-arduino-tutorial/)*
+
+```cpp
+#include "Servo.h"
+Servo myservo;  // Create a servo object
+#define servoPin 9  // Define the servo pin
 
 void setup() {
-  myservo.attach(9); // Attach the servo to digital pin 9
+  myservo.attach(servoPin);  // Attach the servo to the defined pin
 }
 
 void loop() {
-  // Move the servo to 0 degrees
-  myservo.write(0);
-  delay(1000); // Wait for 1 second
-  
-  // Move the servo to 90 degrees
-  myservo.write(90);
-  delay(1000); // Wait for 1 second
-  
-  // Move the servo to 180 degrees
-  myservo.write(180);
-  delay(1000); // Wait for 1 second
+  myservo.write(90);  // Set the servo angle to 90 degrees
+  delay(1000);
+  myservo.write(180);  // Set the servo angle to 180 degrees
+  delay(1000);
+  myservo.write(0);  // Set the servo angle to 0 degrees
+  delay(1000);
+
+  // Sweep the servo from 0 to 180 degrees
+  for (int angle = 0; angle <= 180; angle += 1) {
+    myservo.write(angle);
+    delay(15);
+  }
+
+  // Sweep the servo from 180 to 0 degrees
+  for (int angle = 180; angle >= 0; angle -= 1) {
+    myservo.write(angle);
+    delay(15);
+  }
+  delay(1000);
 }
+
 ```
 
-This code demonstrates how to control a servo motor's position using an Arduino board.
+This code demonstrates how to control a servo motor using an Arduino board.
 
 # Motors in Robotics
 
@@ -119,5 +131,8 @@ Types of Robot Motors: Robots use various types of motors, including DC motors, 
 ### Everyday Examples of Motors:
 + **Electric Fans:** Electric fans found in homes and offices utilize electric motors for their operation. The motor drives the rotation of fan blades, creating airflow that helps cool the environment. This concept of motor-driven rotation is fundamental to understanding how motors work, which is essential in the context of motor control with Arduino.
 + **Power Windows in Cars:** Many modern cars feature power windows, which are equipped with electric motors. These motors enable the automatic raising and lowering of car windows with the push of a button. Understanding the principles of motor control, as covered in the course, provides insights into how such mechanisms function.
++ **Conveyor Belts in Manufacturing:** Manufacturing facilities often employ conveyor belts driven by motors to transport goods efficiently along production lines. Motor control knowledge is vital for optimizing conveyor belt performance.
++ **Drone Propulsion:** Drones utilize various types of motors, including brushless DC motors, for propulsion and maneuverability. Precise motor control is crucial for stable flight and control.
++ **3D Printers:** 3D printers employ stepper motors to control the movement of print heads and build objects layer by layer. Understanding motor control is integral to achieving accurate and high-quality 3D prints.
 
 These everyday examples illustrate how motors are integrated into common devices, showcasing their practical applications and the importance of motor control knowledge. 
