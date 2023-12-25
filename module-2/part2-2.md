@@ -321,4 +321,3 @@ void loop() {
 
 ```
 
-This example demonstrates how to measure distance using the HC-SR04 ultrasonic sensor and display the results on the serial monitor.
