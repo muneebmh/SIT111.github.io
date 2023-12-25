@@ -8,51 +8,86 @@ In today's digital age, data is a valuable asset. Storing sensor data is critica
 External Storage Devices: Arduino can interface with various external storage devices like SD cards, EEPROM (Electrically Erasable Programmable Read-Only Memory), and even cloud-based services for data storage.
 ### Example: Storing Temperature Data on an SD Card
 
-```cpp
-#include <SPI.h>
-#include <SD.h>
+This experiment demonstrates how to create a data logger using an Arduino and an SD card module to record temperature sensor data. By interfacing the Arduino with the temperature sensor and configuring it to write data onto the SD card, users can collect and store temperature readings for further analysis and monitoring.
 
-File dataFile;
-const int chipSelect = 10; // Define the chip select pin for the SD card module
+![Figure 3 21](https://github.com/muneebmh/SIT111.github.io/assets/149995551/00faa3ad-e52b-44a1-b592-0b460979e2bb)
+
+*Figure 3.21 Schematic Diagram for Integration of SD Card with Arduino (Source: https://maker.pro/arduino/tutorial/how-to-make-an-arduino-sd-card-data-logger-for-temperature-sensor-data)*
+
+```cpp
+#include <SD.h>
+#include <SPI.h>
+#include <DS3231.h>
+File sdcard_file;
+DS3231  rtc(SDA, SCL);
+int CS_pin = 10; // Pin 10 on Arduino Uno
+const int sensor_pin = A0;
+float temp;  
+float output;
 
 void setup() {
   Serial.begin(9600);
-  // Initialize the SD card
-  if (SD.begin(chipSelect)) {
-    Serial.println("SD card initialized.");
-  } else {
-    Serial.println("SD card initialization failed.");
+  pinMode(sensor_pin,INPUT);
+  pinMode(CS_pin, OUTPUT);
+  rtc.begin(); 
+  // SD Card Initialization
+  if (SD.begin())
+  {
+    Serial.println("SD card is ready to use.");
+  } else
+  {
+    Serial.println("SD card initialization failed");
+    return;
+  }
+  
+  Serial.print("Date  ");   
+  Serial.print("      ");
+  Serial.print("   Time  ");
+  Serial.print("     ");
+  Serial.print("   Temp   ");
+  Serial.println("     ");
+  sdcard_file = SD.open("data.txt", FILE_WRITE);
+  if (sdcard_file) { 
+    sdcard_file.print("Date  ");   
+    sdcard_file.print("      ");
+    sdcard_file.print("   Time  ");
+    sdcard_file.print("     ");
+    sdcard_file.print("   Temp   ");
+    sdcard_file.println("     ");
+    sdcard_file.close(); // close the file
+  }
+  // if the file didn't open, print an error:
+  else {
+    Serial.println("error opening test.txt");
   }
 }
 
 void loop() {
-  // Read temperature sensor data
-  float temperature = readTemperature();
-
-  // Open the data file in write mode
-  dataFile = SD.open("sensor_data.txt", FILE_WRITE);
-
-  // Check if the file opened successfully
-  if (dataFile) {
-    // Write temperature data to the file
-    dataFile.println(temperature);
-    // Close the file
-    dataFile.close();
-    Serial.println("Data logged.");
-  } else {
-    Serial.println("Error opening data file.");
+  output = analogRead(sensor_pin);
+  temp =(output*500)/1023;
+  Serial.print(rtc.getDateStr());
+  Serial.print("     ");
+  Serial.print(rtc.getTimeStr());
+  Serial.print("      ");
+  Serial.println(temp);
+ 
+  sdcard_file = SD.open("data.txt", FILE_WRITE);
+  if (sdcard_file) {    
+    sdcard_file.print(rtc.getTimeStr());
+    sdcard_file.print("     ");   
+    sdcard_file.print(rtc.getTimeStr());
+    sdcard_file.print("     ");
+    sdcard_file.println(temp);
+    sdcard_file.close(); // close the file
   }
-  delay(10000); // Log data every 10 seconds
-}
-
-float readTemperature() {
-  // Simulated temperature reading function
-  return random(20, 30) + 0.5; // Generate random temperature between 20.0°C and 30.5°C
+  // if the file didn't open, print an error:
+  else {
+    Serial.println("error opening test.txt");
+  }
+  delay(3000);
 }
 ```
-
-
-This example demonstrates how to log temperature data from a sensor to an SD card using Arduino.
+This Arduino code is used to create a temperature data logger system that records temperature readings with timestamps to an SD card. It utilizes an Arduino Uno, a DS3231 real-time clock module for timekeeping, and an SD card module for data storage. In the setup, it initializes hardware components, checks SD card availability, and prepares the data file with a header. The loop function continuously reads the analog temperature sensor, calculates temperature values, retrieves date and time information from the DS3231 module, and logs this data to the "data.txt" file on the SD card. With a 3-second delay between readings, it provides a simple yet effective solution for temperature data collection and monitoring.
 
 # Overview of Data Logging Techniques
 ## Data Logging Methods:
