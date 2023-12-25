@@ -28,6 +28,10 @@ Arduino is not just a name; it's an innovation that empowers individuals to brin
 # Installing the Arduino IDE
 Now that you've met Arduino in-depth, let's embark on the journey of setting up your environment for creative electronic exploration. Imagine the Arduino IDE as a special program that helps you talk to your Arduino. It's where you write instructions for your Arduino to follow, a bit like telling a robot what to do.
 
+![Figure 1 13](https://github.com/muneebmh/SIT111.github.io/assets/149995551/da21875a-0b6f-43a6-aa89-a8f6296aabc1)
+*Figure 1.13 Graphical Interface of Arduino IDE (Source: Arduino Project Handbook by Mark Geddes)*
+
+
 ## What Is the Arduino IDE?
 The Arduino IDE is your gateway to the world of Arduino programming. This software application facilitates code writing, compilation, and uploading to your Arduino board, transforming your ideas into tangible electronic projects.
 ### Key Features of the Arduino IDE:
