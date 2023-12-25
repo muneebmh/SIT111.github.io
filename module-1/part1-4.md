@@ -52,7 +52,8 @@ Arduino programming leverages a simplified version of the C/C++ programming lang
 ## Blinky Program for Arduino:
 
 ![Figure 1 43](https://github.com/muneebmh/SIT111.github.io/assets/149995551/8e69aa6c-f887-4879-9be4-c3b534085922)
-*Figure 1.43 Schematic Diagram for Blinky (Source: Arduino Built-in Examples)*
+ 
+ *Figure 1.43 Schematic Diagram for Blinky (Source: Arduino Built-in Examples)*
 
 This example uses the built-in LED that most Arduino boards have. This LED is connected to a digital pin and its number may vary from board type to board type. To make your life easier, we have a constant that is specified in every board descriptor file. This constant is LED_BUILTIN and allows you to control the built-in LED easily. 
 
