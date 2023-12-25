@@ -1,6 +1,7 @@
 # ---------- Introduction to Arduino --------
 
 ![Figure 1 41](https://github.com/muneebmh/SIT111.github.io/assets/149995551/6d6837c6-baf5-4f07-9606-e127e449e67c)
+
 *Figure 1.41 A Metaphorical Example of Arduino Boards (Source: Dall-E)*
 
 
@@ -11,7 +12,8 @@ Welcome to the exciting world of Arduino! Imagine Arduino as a mini-computer tha
 Arduino is not just a name; it's an innovation that empowers individuals to bring their electronic ideas to life. At its core, Arduino comprises a family of microcontroller-based development boards and a user-friendly software development environment. These boards are designed to be accessible and easy to use, making them an ideal choice for both beginners and experienced makers.
 
 ![Figure 1 42](https://github.com/muneebmh/SIT111.github.io/assets/149995551/9e0e8043-768b-4c6d-9e82-b05035535da5)
-*Figure 1.42 Anantomy of Arduino UNO Board (Source: https://circuitdigest.com/article/everything-you-need-to-know-about-arduino-uno-board-hardware)*
+  
+  *Figure 1.42 Anantomy of Arduino UNO Board (Source: https://circuitdigest.com/article/everything-you-need-to-know-about-arduino-uno-board-hardware)*
 
 ### Anatomy of an Arduino Board:
 + **Microcontroller:** At the core of Arduino boards is the microcontroller, typically featuring an ATmega series microcontroller. This microcontroller serves as the computational unit responsible for executing program instructions and managing hardware interactions. It provides a comprehensive set of input/output (I/O) pins, encompassing both digital and analog functionalities, enabling precise control over a wide array of electronic components.
