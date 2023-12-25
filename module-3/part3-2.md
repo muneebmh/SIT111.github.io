@@ -93,68 +93,178 @@ This Arduino code is used to create a temperature data logger system that record
 ## Data Logging Methods:
 
 Data logging involves the process of collecting data from sensors or other sources and storing it for future analysis. Various techniques can be employed for data logging, depending on the application.
-+ **Continuous Logging:** In continuous data logging, data is recorded at regular intervals over time. This method is suitable for monitoring environmental conditions or system performance.
-+ **Event-Based Logging:** Event-based logging records data when specific events or conditions occur. It's commonly used in applications where data needs to be captured only when significant events happen.
++ **Continuous Logging:** This method involves regularly recording data at predefined intervals, making it suitable for applications like environmental monitoring, where you need to track changes in conditions over time. For example, you can log temperature data every minute to observe daily temperature fluctuations.
++ **Event-Based Logging:** Event-based logging is triggered by specific events or conditions. In Arduino, this is valuable when you want to capture data only when certain events occur. For instance, you can log sensor data when a motion detector detects movement or when a threshold value is exceeded, such as monitoring soil moisture and recording data only when it falls below a certain level.
 
 ### Example: Continuous Data Logging
 
 ```cpp
+#include <SD.h>
+#include <SPI.h>
+#include <DHT.h>
+
+#define DHTPIN 2           // Define the pin where your DHT sensor is connected
+#define DHTTYPE DHT22      // Define the type of DHT sensor (DHT11 or DHT22)
+#define CS_PIN 4            // Define the chip select pin for the SD card module
+
+DHT dht(DHTPIN, DHTTYPE);   // Create a DHT object
+File dataFile;              // Create a File object for data logging
+
 void setup() {
   Serial.begin(9600);
+  dht.begin();             // Initialize the DHT sensor
+  
+  // Initialize SD card
+  if (SD.begin(CS_PIN)) {
+    Serial.println("SD card is ready to use.");
+  } else {
+    Serial.println("SD card initialization failed.");
+    while (1); // Halt the program if SD card initialization fails
+  }
+  
+  // Open or create a file for data logging
+  dataFile = SD.open("datalog.txt", FILE_WRITE);
+  if (dataFile) {
+    Serial.println("Data logging initialized.");
+    dataFile.close(); // Close the file
+  } else {
+    Serial.println("Error opening datalog.txt");
+  }
 }
 
 void loop() {
-  // Read sensor data
   float humidity = readHumidity();
   float temperature = readTemperature();
 
-  // Print data to Serial Monitor
   Serial.print("Humidity (%): ");
   Serial.println(humidity);
   Serial.print("Temperature (°C): ");
   Serial.println(temperature);
+
+  // Log data to the SD card
+  dataFile = SD.open("datalog.txt", FILE_WRITE);
+  if (dataFile) {
+    dataFile.print("Humidity (%): ");
+    dataFile.println(humidity);
+    dataFile.print("Temperature (°C): ");
+    dataFile.println(temperature);
+    dataFile.close(); // Close the file
+  } else {
+    Serial.println("Error opening datalog.txt");
+  }
 
   // Delay for 1 minute before logging the next data point
   delay(60000);
 }
 
 float readHumidity() {
-  // Simulated humidity reading function
-  return random(40, 60) + 0.5; // Generate random humidity between 40.0% and 60.5%
+  float humidity = dht.readHumidity(); // Read humidity from the DHT sensor
+  return humidity;
 }
 
 float readTemperature() {
-  // Simulated temperature reading function
-  return random(20, 30) + 0.5; // Generate random temperature between 20.0°C and 30.5°C
+  float temperature = dht.readTemperature(); // Read temperature from the DHT sensor
+  return temperature;
+}
+
+```
+This Arduino code is designed to continuously collect humidity and temperature data from a DHT22 sensor and log it onto an SD card. It initializes the necessary components, including the DHT sensor and SD card module, then reads the sensor data, displays it on the Serial Monitor for real-time monitoring, and simultaneously writes it to a file called "datalog.txt" on the SD card. The code runs in a loop, periodically recording data at one-minute intervals, making it a practical solution for long-term environmental monitoring or data acquisition applications.
+
+### Example: Event based Data Logging
+
+
+```cpp
+#include <SD.h>
+#include <DHT.h>
+
+#define DHTPIN 7        // Define the digital pin for DHT22 sensor
+#define DHTTYPE DHT22   // DHT22 (AM2302) sensor type
+
+const int buttonPin = 2; // Define the digital pin for the button
+const int ledPin = 13;   // Define the built-in LED pin
+
+File dataFile; // Create a File object for data logging
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(ledPin, OUTPUT);
+
+  // Initialize SD card
+  if (SD.begin(4)) { // Use pin 4 for SD card communication
+    Serial.println("SD card is ready to use.");
+  } else {
+    Serial.println("SD card initialization failed.");
+    while (1); // Halt the program if SD card initialization fails
+  }
+
+  // Open or create a file for data logging
+  dataFile = SD.open("datalog.txt", FILE_WRITE);
+  if (dataFile) {
+    Serial.println("Data logging initialized.");
+    dataFile.close(); // Close the file
+  } else {
+    Serial.println("Error opening datalog.txt");
+  }
+}
+
+void loop() {
+  int buttonState = digitalRead(buttonPin);
+
+  if (buttonState == LOW) {
+    digitalWrite(ledPin, HIGH); // Turn on LED when button is pressed
+
+    // Read sensor data
+    float humidity = dht.readHumidity();
+    float temperature = dht.readTemperature();
+
+    // Log data to the SD card
+    dataFile = SD.open("datalog.txt", FILE_WRITE);
+    if (dataFile) {
+      dataFile.print("Humidity (%): ");
+      dataFile.println(humidity);
+      dataFile.print("Temperature (°C): ");
+      dataFile.println(temperature);
+      dataFile.close(); // Close the file
+      Serial.println("Data logged.");
+    } else {
+      Serial.println("Error opening datalog.txt");
+    }
+
+    // Wait for the button to be released
+    while (digitalRead(buttonPin) == LOW) {
+      delay(10);
+    }
+
+    digitalWrite(ledPin, LOW); // Turn off LED
+  }
 }
 ```
 
-This code demonstrates continuous data logging of humidity and temperature readings to the Serial Monitor.
+This code logs data when the button is pressed and released. It reads temperature and humidity from the DHT22 sensor and writes the data to an SD card file. The built-in LED indicates when data is being recorded. Press the button to capture and log data for event-based monitoring.
+
 
 # Applications of Data Storage
-## Real-World Data Storage Applications:
+## Real-World Data Storage Applications via Arduino:
 
 Data storage has a wide range of applications in the real world, impacting various fields such as agriculture, healthcare, and transportation.
 Environmental Monitoring: Arduino-based data loggers are used to monitor and record environmental parameters like temperature, humidity, and air quality, providing valuable data for scientific research and climate studies.
-Medical Devices: Medical devices often incorporate data logging to record patient vital signs or treatment parameters, aiding in patient care and diagnosis.
-### Example: Healthcare Data Logger
 
-```cpp
-// Simulated code for a healthcare data logger
-void loop() {
-  // Read patient's vital signs (e.g., heart rate, blood pressure)
-  float heartRate = readHeartRate();
-  float bloodPressure = readBloodPressure();
+![Figure 3 22](https://github.com/muneebmh/SIT111.github.io/assets/149995551/66d462a3-f85c-48d1-868a-6ad5225ad48b)
+*Figure 3.22 A Metaphorical Example of Data Logging Scenarios via Arduino (Source: Dall-E)*
 
-  // Store data in a secure memory location
-  writeToMemory(heartRate, bloodPressure);
+Some of they key applications in real-world are as follows:
 
-  // Delay for a specified interval before the next reading
-  delay(60000); // Log data every 1 minute
-}
-```
++ **Weather Station:** In this project, Arduino is used to collect data from various weather sensors such as temperature, humidity, and barometric pressure sensors. The Arduino then processes and stores this data on an SD card. Users can access historical weather data for analysis and forecasting.
 
-In this example, Arduino logs healthcare-related data such as heart rate and blood pressure for patient monitoring.
++ **Aquaponics Monitoring:** Arduino is employed to measure water quality parameters like pH levels and nutrient concentrations in an aquaponics system. The collected data is stored on an SD card, enabling aquaponics enthusiasts to monitor and optimize the conditions for both fish and plant growth.
+
++ **Home Energy Monitor:** Current sensors connected to an Arduino track electricity consumption in a household. The Arduino logs this data onto an SD card at regular intervals. Homeowners can use the data to analyze their energy usage patterns and make informed decisions on energy conservation.
+
++ **Security Camera System:** Arduino is used to control motion sensors and cameras in a security system. When motion is detected, Arduino triggers the camera to capture images or videos. These files are stored on an SD card, allowing homeowners to review surveillance footage when necessary.
+
++ **Environmental Data Logger:** Various environmental sensors are connected to an Arduino to measure parameters like temperature, humidity, and gas levels. Arduino logs this data onto an SD card, making it useful for environmental research, indoor air quality monitoring, and safety applications.
 
 # Wireless Communication
 Welcome to Module 3.3, where we will explore the fascinating world of wireless communication with Arduino. In this section, you will learn the fundamentals of wireless communication protocols commonly used with Arduino, understand the principles of wireless communication, and explore the diverse applications of wireless control in Arduino projects.
